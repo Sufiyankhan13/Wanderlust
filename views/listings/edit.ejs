@@ -10,13 +10,13 @@
 <h3>Edit your Listing</h3>
     
     
-    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
 
 
       
       <div class="mb3">
         <label for="tile" class="form-label">Title</label>
-        <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control"/>
+        <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required/>
       </div>
       
       <br /><br />
@@ -24,8 +24,8 @@
       <div class="mb3"> 
      
       <label for="description" class="form-label">Description</label>
-      <textarea name="listing[description]" class="form-control">
-      <%= listing.description %></textarea>
+      <textarea name="listing[description]" class="form-control" required>
+      <%= listing.description  %></textarea>
      
       </div>
 
@@ -34,7 +34,7 @@
       <div class="mb-3">
        
         <label for="image" class="form-label">Image</label>
-        <input name="listing[image]" value="<%= listing.image %>" type="text" class="form-control"/>
+        <input name="listing[image]" value="<%= listing.image %>" type="text" class="form-control" required/>
       
 
       </div>
@@ -47,7 +47,7 @@
                    name="listing[price]"
                    value="<%= listing.price %>"
                    type="number" 
-                   class="form-control" />
+                   class="form-control" required />
         </div>
     
         <!-- Country Field (8 columns) -->
@@ -57,7 +57,7 @@
                    name="listing[country]"
                    value="<%= listing.country %>"
                    type="text"
-                   class="form-control" />
+                   class="form-control" required />
         </div>
     </div>
       
@@ -70,7 +70,7 @@
         name="listing[location]"
         value="<%= listing.location %>"
         type="text" class="form-control"
-      /> 
+        required  /> 
 
       </div>
       
